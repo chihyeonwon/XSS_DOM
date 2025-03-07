@@ -27,8 +27,12 @@ http://자신의 IP/vulnerabilities/xss_d/?default=English스크립트 구문을
 공격 우회방법 '#' 문자 뒤에 있는 값을 서버로 전송하지 않는 것을 이용하지만, 브라우저에서는 동일하게 실행이 됩니다.    
 http://자신의 IP/vulnerabilities/xss_d/?default=English#<script>alert(document.cookie)</script>자신의 원하는 문구를 팝업창으로 띄움     
 http://자신의 IP/vulnerabilities/xss_d/?default=English#<script>alert("XSS TEST")</script>테스트가 되지 않으시는 분들은 이렇게 설정을 변경후 테스트를 해보시기 바랍니다.     
-출처: https://securitycode.tistory.com/61 [태군 코드 : Security, travel & communication:티스토리]
-
+      
+[인터넷 옵션] -> [보안] -> [사용자 지정수준] -> [보안 설정]Medium 레벨 소스 코드를 확인해 보시면 <script> 부분을 필터링을 하고 있는 것을 알수 있습니다.        
+?default=test</option></select><img src="" onerror="alert()">High레벨 에서는 switch 구문을 이용하여 값을 지정해 놓은 것을 확인할 수 있습니다.     
+default=English#<script>alert("")</script>해당 공격구문을 참조하여 풀어 보시길 바랍니다.       
+English 값 수동변경여기서 테스트한 스크립트값은 단순히 쿠키 값을 출력하는 스크립트이지만,      
+해당 스크리트값 대신 다양한 공격용 코드로 대체할 경우 쿠키 정보 및 세션 정보획득, 클라이언트 프로그램 해킹 등 다양한 방법으로 공격이 이루어 질수 있습니다.     
 
 
 
